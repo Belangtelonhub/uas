@@ -126,11 +126,6 @@
             color: white;
         }
 
-        .edit-button {
-            background-color: #ffc107;
-            color: white;
-        }
-
         .delete-button {
             background-color: #dc3545;
             color: white;
@@ -213,17 +208,6 @@
                 Metode Pembayaran: ${transaction.paymentMethod}\n
                 Status: ${transaction.status}`
             );
-        } else {
-            alert('Transaksi tidak ditemukan!');
-        }
-    }
-
-    function editTransaction(id) {
-        const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-        const transaction = transactions.find(t => t.id === id);
-
-        if (transaction) {
-            window.location.href = `edit-transaksi.html?id=${transaction.id}`;
         } else {
             alert('Transaksi tidak ditemukan!');
         }
