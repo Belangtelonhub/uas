@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transaksi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #249c48;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Transaksi</h2>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="customerName">Nama Pelanggan:</label>
+                <input type="text" id="customerName" name="customerName" required>
+            </div>
+            <div class="form-group">
+                <label for="productName">Nama Barang :</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="totalPayment">Total Pembayaran:</label>
+                <input type="number" id="totalPayment" name="totalPayment" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Metode Pembayaran:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="cash">Tunai</option>
+                    <option value="credit">Kredit</option>
+                    <option value="debit">Debit</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Simpan Perubahan</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionId = urlParams.get('id');
+
+        const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        const transaction = transactions.find(t => t.id === transactionId);
+
+        if (transaction) {
+            document.getElementById('customerName').value = transaction.customerName;
+            document.getElementById('productName').value = transaction.productName;
+            document.getElementById('totalPayment').value = transaction.totalPayment;
+            document.getElementById('paymentMethod').value = transaction.paymentMethod;
+        }
+
+        document.getElementById('editForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            transaction.customerName = document.getElementById('customerName').value;
+            transaction.productName = document.getElementById('productName').value;
+            transaction.totalPayment = document.getElementById('totalPayment').value;
+            transaction.paymentMethod = document.getElementById('paymentMethod').value;
+
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+
+            alert('Transaksi berhasil diperbarui!');
+            window.location.href = 'daftartransaksi.html';
+        });
+    </script>
+</body>
+</html>

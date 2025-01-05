@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BELANG TELON SHOP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #249c48;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topnav li {
+            display: block;
+        }
+
+        .topnav a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        .column.side {
+            width: 70%;
+        }
+
+        .column.middle {
+            width: 30%;
+        }
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+            .tutorial {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+        }
+
+            .tutorial h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #249c48;
+        }
+
+           .tutorial ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+        }
+
+           .tutorial li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+           .tutorial li img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+        }
+
+.tutorial li h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #249c48;
+    margin-top: 0;
+        }
+
+.tutorial li p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+        }
+
+.tutorial li ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+        }
+
+.tutorial li ul li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img width="150" height="150" src="logokucing.png" alt="Logo">
+    <h1>BELANG TELON SHOP</h1>
+    <h3>Anda berada dihalaman beranda. Silahkan pilih menu yang diinginkan.</h3>
+</div>
+
+<div class="topnav">
+    <ul>
+        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="transaksi.html">Transaksi</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</div>
+
+<div class="tutorial">
+    <h2>Panduan Menggunakan Website</h2>
+    <ul>
+        <li>
+            <h3>Langkah 1: Login</h3>
+            <img src="login.png" alt="Login">
+            <p>Untuk menggunakan website ini, Anda harus login terlebih dahulu. Silahkan klik tombol "Login" di menu atas dan masukkan username dan password Anda.</p>
+            <p>Contoh:</p>
+            <ul>
+                <li>Username: admin</li>
+                <li>Password: lukman76</li>
+            </ul>
+            <p>Jika Anda belum memiliki akun, silahkan daftar terlebih dahulu.</p>
+        </li>
+        <li>
+            <h3>Langkah 2: Menuju Halaman Transaksi</h3>
+            <img src="transaksi.png" alt="Transaksi">
+            <p>Setelah login, silahkan klik tombol "Transaksi" di menu atas untuk menuju halaman transaksi.</p>
+            <p> Di halaman transaksi, Anda akan melihat form transaksi yang harus diisi.</p>
+        </li>
+        <li>
+            <h3>Langkah 3: Mengisi Form Transaksi</h3>
+            <img src="formtransaksi.png" alt="Form Transaksi">
+            <p>Di halaman transaksi, silahkan isi form transaksi dengan data yang benar. Pastikan Anda mengisi semua field yang wajib diisi, seperti:</p>
+            <ul>
+                <li>Nama Pelanggan</li>
+                <li>Nama Barang</li>
+                <li>Jumlah</li>
+                <li>Harga Satuan</li>
+                <li>Metode Pembayaran</li>
+            </ul>
+            <p>Setelah semua data terisi, klik tombol "Simpan Transaksi" untuk menyimpan transaksi.</p>
+        </li>
+        <li>
+            <h3>Langkah 4: Menuju Halaman Daftar Transaksi</h3>
+            <img src="daftartransaksi.png" alt="Daftar Transaksi">
+            <p>Setelah mengisi form transaksi, silahkan klik tombol "Daftar Transaksi" di menu atas untuk menuju halaman daftar transaksi.</p>
+            <p>Di halaman ini, Anda akan melihat semua transaksi yang telah Anda buat.</p>
+        </li>
+        <li>
+            <h3>Langkah 5: Melihat, Mengedit, dan Menghapus Data Transaksi</h3>
+            <img src="edittransaksi.png" alt="Edit dan Hapus Transaksi">
+            <p>Di halaman daftar transaksi, Anda dapat melakukan beberapa tindakan:</p>
+            <ul>
+                <li><strong>Melihat Detail:</strong> Klik tombol "Lihat" pada transaksi untuk melihat detailnya.</li>
+                <li><strong>Mengedit:</strong> Klik tombol "Edit" di samping transaksi untuk mengubah data transaksi.</li>
+                <li><strong>Menghapus:</strong> Klik tombol "Hapus" untuk menghapus transaksi yang tidak diperlukan.</li>
+            </ul>
+            <p>Pastikan untuk mengonfirmasi setiap tindakan yang Anda lakukan.</p>
+        </li>
+    </ul>
+</div>
+
+<div class="footer">
+    <p>2025 Belang Telon Shop. All Rights Reserved</p>
+</div>
+
+</body>
+</html>
